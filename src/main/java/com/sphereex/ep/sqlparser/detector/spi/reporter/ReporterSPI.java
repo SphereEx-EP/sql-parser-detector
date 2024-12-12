@@ -1,4 +1,6 @@
 package com.sphereex.ep.sqlparser.detector.spi.reporter;
 
-public interface ReporterSPI {
+import com.sphereex.ep.sqlparser.detector.spi.BaseSPI;
+
+public interface ReporterSPI extends BaseSPI {
 }
