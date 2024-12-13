@@ -22,33 +22,43 @@ import lombok.SneakyThrows;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 /**
  * SQL parser external IT environment.
  */
 @Getter
-public final class SQLParserExternalITEnvironment {
+public final class SQLParserEnvironment {
     
-    private static final String SQL_PARSER_EXTERNAL_IT_ENABLED_KEY = "sql.parser.external.it.enabled";
+    private static final String SQL_PARSER_REPORTER_PATH = "sql.parser.report.path";
     
-    private static final String SQL_PARSER_EXTERNAL_IT_REPORT_PATH = "sql.parser.external.it.report.path";
+    private static final String SQL_PARSER_REPORTER_TYPE = "sql.parser.report.processor.type";
     
-    private static final String SQL_PARSER_EXTERNAL_IT_REPORT_TYPE = "sql.parser.external.it.report.type";
+    private static final String SQL_PARSER_READER_TYPE = "sql.parser.source.reader.type";
     
-    private static final SQLParserExternalITEnvironment INSTANCE = new SQLParserExternalITEnvironment();
-    
-    private final boolean sqlParserITEnabled;
+    private static final SQLParserEnvironment INSTANCE = new SQLParserEnvironment();
     
     private final String resultPath;
     
     private final String resultProcessorType;
     
-    private SQLParserExternalITEnvironment() {
+    private final String sourceReaderType;
+    
+    private final Map<String, String> externalEnv;
+    
+    private SQLParserEnvironment() {
         Properties props = loadProperties();
-        sqlParserITEnabled = Boolean.parseBoolean(props.getProperty(SQL_PARSER_EXTERNAL_IT_ENABLED_KEY));
-        resultPath = props.getProperty(SQL_PARSER_EXTERNAL_IT_REPORT_PATH, "/tmp/");
-        resultProcessorType = props.getProperty(SQL_PARSER_EXTERNAL_IT_REPORT_TYPE, "LOG");
+        resultPath = props.getProperty(SQL_PARSER_REPORTER_PATH, "/tmp/");
+        resultProcessorType = props.getProperty(SQL_PARSER_REPORTER_TYPE, "LOG");
+        sourceReaderType = props.getProperty(SQL_PARSER_READER_TYPE, "GITHUB");
+        externalEnv = new HashMap<>(16);
+        if (!props.isEmpty()) {
+            for (String each : props.stringPropertyNames()) {
+                externalEnv.put(each, props.getProperty(each));
+            }
+        }
     }
     
     /**
@@ -56,14 +66,14 @@ public final class SQLParserExternalITEnvironment {
      *
      * @return got instance
      */
-    public static SQLParserExternalITEnvironment getInstance() {
+    public static SQLParserEnvironment getInstance() {
         return INSTANCE;
     }
     
     @SneakyThrows(IOException.class)
     private Properties loadProperties() {
         Properties result = new Properties();
-        try (InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("env/sql-parser-env.properties")) {
+        try (InputStream inputStream = Thread.currentThread().getContextClassLoader().getResourceAsStream("sql-parser-env.properties")) {
             result.load(inputStream);
         }
         for (String each : System.getProperties().stringPropertyNames()) {
