@@ -22,7 +22,7 @@ import java.io.IOException;
 /**
  * SQL parse result reporter.
  */
-public final class SQLParseResultFileReporter implements SQLParseResultReporter {
+public final class FileSQLParseResultReporter implements SQLParseResultReporter {
     
     @Override
     public void printResult(final String sqlCaseId, final String databaseType, final boolean isSuccess, final String sql) {

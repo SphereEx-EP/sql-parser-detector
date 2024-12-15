@@ -1,6 +1,6 @@
 package com.sphereex.ep.sqlparser.detector.reporter.creator;
 
-import com.sphereex.ep.sqlparser.detector.reporter.SQLParseResultFileReporter;
+import com.sphereex.ep.sqlparser.detector.reporter.FileSQLParseResultReporter;
 import com.sphereex.ep.sqlparser.detector.reporter.SQLParseResultReporter;
 
 import java.util.Map;
@@ -9,7 +9,7 @@ public class SQLParserResultReporterFileCreator implements SQLParserResultReport
     
     @Override
     public SQLParseResultReporter create(String databaseType, Map<String, String> resources) {
-        return new SQLParseResultFileReporter();
+        return new FileSQLParseResultReporter();
     }
     
     @Override
