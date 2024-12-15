@@ -15,12 +15,12 @@
  * limitations under the License.
  */
 
-package com.sphereex.ep.sqlparser.detector.reporter;
+package com.sphereex.ep.sqlparser.detector.reporter.creator;
 
+import com.sphereex.ep.sqlparser.detector.reporter.SQLParseResultReporter;
 import com.sphereex.ep.sqlparser.detector.spi.BaseSPI;
 
 import java.util.Map;
-import java.util.Properties;
 
 /**
  * SQL parse result reporter creator.
