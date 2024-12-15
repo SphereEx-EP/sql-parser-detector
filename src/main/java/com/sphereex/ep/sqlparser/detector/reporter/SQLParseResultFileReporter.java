@@ -15,24 +15,27 @@
  * limitations under the License.
  */
 
-package com.sphereex.ep.sqlparser.detector.reporter.creator;
+package com.sphereex.ep.sqlparser.detector.reporter;
 
-import com.sphereex.ep.sqlparser.detector.reporter.SQLParseResultReporter;
-import com.sphereex.ep.sqlparser.detector.spi.BaseSPI;
-
-import java.util.Map;
+import java.io.IOException;
 
 /**
- * SQL parse result reporter creator.
+ * SQL parse result reporter.
  */
-public interface SQLParseResultReporterCreator extends BaseSPI {
+public final class SQLParseResultFileReporter implements SQLParseResultReporter {
     
-    /**
-     * Create SQL parse result reporter.
-     *
-     * @param databaseType database type
-     * @param resource the resource for reporter, could be path or database resource
-     * @return created SQL parse result reporter
-     */
-    SQLParseResultReporter create(String databaseType, Map<String, String> resource);
+    @Override
+    public void printResult(final String sqlCaseId, final String databaseType, final boolean isSuccess, final String sql) {
+        System.out.println(sqlCaseId + " " + databaseType + " " + isSuccess + " " + sql);
+    }
+    
+    @Override
+    public void close() throws IOException {
+    
+    }
+    
+    @Override
+    public Object getType() {
+        return "file";
+    }
 }

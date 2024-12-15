@@ -17,12 +17,14 @@
 
 package com.sphereex.ep.sqlparser.detector.reporter;
 
+import com.sphereex.ep.sqlparser.detector.spi.BaseSPI;
+
 import java.io.IOException;
 
 /**
  * SQL parse result reporter.
  */
-public interface SQLParseResultReporter extends AutoCloseable {
+public interface SQLParseResultReporter extends BaseSPI, AutoCloseable {
     
     /**
      * Print result.
