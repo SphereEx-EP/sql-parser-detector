@@ -52,7 +52,7 @@ public final class SQLParserEnvironment {
         Properties props = loadProperties();
         resultPath = props.getProperty(SQL_PARSER_REPORTER_PATH, "/tmp/");
         resultProcessorType = props.getProperty(SQL_PARSER_REPORTER_TYPE, "LOG");
-        sourceReaderType = props.getProperty(SQL_PARSER_READER_TYPE, "GITHUB");
+        sourceReaderType = props.getProperty(SQL_PARSER_READER_TYPE, "mysql_datasource");
         externalEnv = new HashMap<>(16);
         if (!props.isEmpty()) {
             for (String each : props.stringPropertyNames()) {

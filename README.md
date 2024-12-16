@@ -1,7 +1,14 @@
 # sql-parser-detector
 该项目用于检测 SQL 语句是否为 AST 可解析的SQL语句，并根据 SPI 指定的接口生成报告。
 
-##
+## 使用
+1. 配置 sql-parser-env.properties
+   - 配置文件路径：sql-parser-env.properties
+   - 配置内容：
+      - 配置 SPI Reader 实现类对应的名称
+        - Reader 为数据库时，配置数据库的连接信息
+      - 配置 SPI Reporter 实现类对应的名称
+2. 运行 Application
 
 ## 结构
 
