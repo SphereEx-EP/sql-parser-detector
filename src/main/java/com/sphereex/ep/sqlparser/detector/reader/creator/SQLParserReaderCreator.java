@@ -1,7 +1,6 @@
 package com.sphereex.ep.sqlparser.detector.reader.creator;
 
 import com.sphereex.ep.sqlparser.detector.reader.SQLParserReader;
-import com.sphereex.ep.sqlparser.detector.reporter.SQLParseResultReporter;
 import com.sphereex.ep.sqlparser.detector.spi.BaseSPI;
 
 import java.util.Map;

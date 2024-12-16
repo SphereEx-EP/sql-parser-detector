@@ -15,10 +15,4 @@
 # limitations under the License.
 #
 
-sql.parser.report.path=/tmp/
-sql.parser.source.reader.type=GITHUB
-sql.parser.report.processor.type=csv
-
-datasource.url=jdbc:mysql://127.0.0.1:3306/test_db
-datasource.username=root
-datasource.password=root
+com.sphereex.ep.sqlparser.detector.reader.MySQLDatasourceSQLParserReader
