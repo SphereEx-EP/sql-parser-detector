@@ -1,16 +1,16 @@
 package com.sphereex.ep.sqlparser.detector.reader.creator;
 
 import com.sphereex.ep.sqlparser.detector.constants.SQLParserConstant;
-import com.sphereex.ep.sqlparser.detector.reader.MySQLDatasourceSQLParserReader;
-import com.sphereex.ep.sqlparser.detector.reader.SQLParserReader;
+import com.sphereex.ep.sqlparser.detector.reader.MySQLDatasourceSQLParserExecutor;
+import com.sphereex.ep.sqlparser.detector.reader.SQLParserExecutor;
 
 import java.util.Map;
 
 public class GitHubUriSQLParserReaderCreator implements SQLParserReaderCreator {
     
     @Override
-    public SQLParserReader create(final String databaseType, final Map<String, String> resources) {
-        return new MySQLDatasourceSQLParserReader();
+    public SQLParserExecutor create(final String databaseType, final Map<String, String> resources) {
+        return new MySQLDatasourceSQLParserExecutor();
     }
     
     @Override

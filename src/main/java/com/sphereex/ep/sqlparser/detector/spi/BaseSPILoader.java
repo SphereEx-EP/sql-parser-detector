@@ -1,6 +1,5 @@
 package com.sphereex.ep.sqlparser.detector.spi;
 
-import java.util.Iterator;
 import java.util.Map;
 import java.util.ServiceLoader;
 import java.util.concurrent.ConcurrentHashMap;

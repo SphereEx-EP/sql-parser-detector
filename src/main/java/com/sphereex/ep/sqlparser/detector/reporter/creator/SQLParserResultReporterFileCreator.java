@@ -1,5 +1,6 @@
 package com.sphereex.ep.sqlparser.detector.reporter.creator;
 
+import com.sphereex.ep.sqlparser.detector.constants.SQLParserConstant;
 import com.sphereex.ep.sqlparser.detector.reporter.FileSQLParseResultReporter;
 import com.sphereex.ep.sqlparser.detector.reporter.SQLParseResultReporter;
 
@@ -14,6 +15,6 @@ public class SQLParserResultReporterFileCreator implements SQLParserResultReport
     
     @Override
     public Object getType() {
-        return "file";
+        return SQLParserConstant.FILE;
     }
 }

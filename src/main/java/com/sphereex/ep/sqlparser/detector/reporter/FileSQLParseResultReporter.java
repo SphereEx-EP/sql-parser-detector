@@ -17,6 +17,8 @@
 
 package com.sphereex.ep.sqlparser.detector.reporter;
 
+import com.sphereex.ep.sqlparser.detector.constants.SQLParserConstant;
+
 import java.io.IOException;
 
 /**
@@ -26,7 +28,7 @@ public final class FileSQLParseResultReporter implements SQLParseResultReporter 
     
     @Override
     public void printResult(final String sqlCaseId, final String databaseType, final boolean isSuccess, final String sql) {
-        System.out.println(sqlCaseId + " " + databaseType + " " + isSuccess + " " + sql);
+        System.out.println("'" + sqlCaseId + " " + databaseType + " " + sql + "'" + " is success: " + isSuccess);
     }
     
     @Override
@@ -36,6 +38,6 @@ public final class FileSQLParseResultReporter implements SQLParseResultReporter 
     
     @Override
     public Object getType() {
-        return "file";
+        return SQLParserConstant.FILE;
     }
 }

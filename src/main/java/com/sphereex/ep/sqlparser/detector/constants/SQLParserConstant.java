@@ -10,6 +10,8 @@ public final class SQLParserConstant {
     
     public static final String GITHUB = "github";
     
+    public static final String FILE = "file";
+    
     public static final String MYSQL_DATASOURCE = "mysql_datasource";
     
     public static final String CSV = "csv";

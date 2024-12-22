@@ -15,4 +15,4 @@
 # limitations under the License.
 #
 
-com.sphereex.ep.sqlparser.detector.reader.MySQLDatasourceSQLParserReader
+com.sphereex.ep.sqlparser.detector.reader.creator.MySQLDatasourceSQLParserReaderCreator
