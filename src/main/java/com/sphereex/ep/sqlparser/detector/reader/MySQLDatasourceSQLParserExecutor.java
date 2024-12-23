@@ -16,9 +16,9 @@ public class MySQLDatasourceSQLParserExecutor implements SQLParserExecutor {
     @Override
     public void executeSQL(final String databaseType, final Map<String, String> resources) {
         ResultSet resultSet;
-        String url = resources.get("datasource.url");
-        String username = resources.get("datasource.username");
-        String password = resources.get("datasource.password");
+        String url = resources.get("sql.parser.reader.datasource.url");
+        String username = resources.get("sql.parser.reader.datasource.username");
+        String password = resources.get("sql.parser.reader.datasource.password");
         try {
             Connection connection = DriverManager.getConnection(url, username, password);
             Statement statement = connection.createStatement();

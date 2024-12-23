@@ -9,3 +9,4 @@ CREATE TABLE t_sql
 
 insert into t_sql values (1, "select * from table a");
 insert into t_sql values (2, "insert into table a values (1, 2, 3)");
+insert into t_sql values (3, "insert into table_a values (1, 2, 3)");
