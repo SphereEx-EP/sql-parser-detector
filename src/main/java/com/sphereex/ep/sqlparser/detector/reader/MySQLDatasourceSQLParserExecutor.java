@@ -2,6 +2,7 @@ package com.sphereex.ep.sqlparser.detector.reader;
 
 import com.sphereex.ep.sqlparser.detector.constants.SQLParserConstant;
 import com.sphereex.ep.sqlparser.detector.engine.SQLParserEngine;
+import com.sphereex.ep.sqlparser.detector.env.SQLParserEnvironment;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -35,7 +36,7 @@ public class MySQLDatasourceSQLParserExecutor implements SQLParserExecutor {
             while (resultSet.next()) {
                 String sqlCaseId = resultSet.getString("id");
                 String sql = resultSet.getString("sql_case");
-                parserEngine.executeSQLParse(sqlCaseId, databaseType, sql, SQLParserConstant.FILE);
+                parserEngine.executeSQLParse(sqlCaseId, databaseType, sql, SQLParserEnvironment.getInstance().getResultProcessorType());
             }
         } catch (Exception ignore) {
             ignore.printStackTrace();
