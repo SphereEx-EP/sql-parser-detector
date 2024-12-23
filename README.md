@@ -17,7 +17,7 @@ Reporter :
     - 项目根目录中执行 `mvn clean package` 命令，打包生成 jar 包
     - 执行对应的 jar 包，例如 `java -jar target/sql-parser-detector-jar-with-dependencies.jar`
 
-测试
+样例
 ```shell
 ## 通过容器测试
 docker run --restart=always --platform linux/x86_64 -itd --name mysql_13306 -e MYSQL_ROOT_PASSWORD=root -p13306:3306 mysql:5.7.44
