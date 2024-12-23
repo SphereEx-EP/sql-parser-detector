@@ -16,3 +16,4 @@
 #
 
 com.sphereex.ep.sqlparser.detector.reporter.creator.SQLParserResultReporterFileCreator
+com.sphereex.ep.sqlparser.detector.reporter.creator.SQLParserResultReporterCsvCreator

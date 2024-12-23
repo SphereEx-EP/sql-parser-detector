@@ -16,3 +16,4 @@
 #
 
 com.sphereex.ep.sqlparser.detector.reader.creator.MySQLDatasourceSQLParserReaderCreator
+com.sphereex.ep.sqlparser.detector.reader.creator.CsvSQLParserReaderCreator

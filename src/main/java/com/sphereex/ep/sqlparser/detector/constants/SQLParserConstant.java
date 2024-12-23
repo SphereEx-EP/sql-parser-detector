@@ -8,6 +8,8 @@ public final class SQLParserConstant {
     
     public static final String REPORT_PATH = "sql.parser.report.path";
     
+    public static final String READER_CSV_PATH = "sql.parser.csv.file.path";
+    
     public static final String GITHUB = "github";
     
     public static final String FILE = "file";
