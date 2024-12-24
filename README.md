@@ -2,20 +2,13 @@
 该项目用于检测 SQL 语句是否为 AST 可解析的SQL语句，并根据 SPI 指定的接口生成报告。
 
 ## 使用
-Executor :
-  用于处理 SQL 源读取与执行的接口，SQL 数据源可以是文件、CSV、甚至数据库中的记录。
+1. 打包
+  - 项目根目录中执行 `mvn clean package` 命令，打包生成 jar 包
+  - 执行对应的 jar 包，例如 `java -jar target/sql-parser-detector-jar-with-dependencies.jar`
 
-Reporter :
-   用于生成 SQL 解析结果报告的接口，报告可以是文件、CSV、甚至数据库中的记录。
+2. 修改配置
+  - 配置文件路径：`resource/sql-parser-env.properties`
 
-1. 配置 sql-parser-env.properties
-   - 配置文件路径：sql-parser-env.properties
-   - 配置内容：
-      - 配置 SPI Reader 实现类对应的 name
-      - 配置 SPI Reporter 实现类对应的 name
-2. 打包
-    - 项目根目录中执行 `mvn clean package` 命令，打包生成 jar 包
-    - 执行对应的 jar 包，例如 `java -jar target/sql-parser-detector-jar-with-dependencies.jar`
 
 样例
 ```shell
@@ -51,6 +44,17 @@ sql.parser.reader.datasource.password=root
 ```
 
 ## 结构
+Executor :
+  用于处理 SQL 源读取与执行的接口，SQL 数据源可以是文件、CSV、甚至数据库中的记录。
+
+Reporter :
+   用于生成 SQL 解析结果报告的接口，报告可以是文件、CSV、甚至数据库中的记录。
+
+1. 配置 sql-parser-env.properties
+  - 配置文件路径：sql-parser-env.properties
+  - 配置内容：
+    - 配置 SPI Reader 实现类对应的 name
+    - 配置 SPI Reporter 实现类对应的 name
 
 ```
 ├── java
